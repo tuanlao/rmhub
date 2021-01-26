@@ -1,0 +1,7 @@
+{
+  "app.containers.HomePage.byUrl": "By url",
+  "app.containers.HomePage.ok": "OK",
+  "app.containers.HomePage.upload": "Upload file",
+  "app.containers.HomePage.url": "url",
+  "app.containers.NotFoundPage.header": "Page not found."
+}
