@@ -7,9 +7,6 @@ interface Props {
   contents: Array<Array<TestData>>;
 }
 
-const defaultWidth = 160;
-const defaultHeight = 66;
-
 const ContentTable = (props: Props) => {
   const classes = useStyles();
   const { contents } = props;
@@ -21,13 +18,9 @@ const ContentTable = (props: Props) => {
           datas.map((data, j) => (
             <Content
               content={data.content}
-              style={{
-                width: defaultWidth * (data.span?.row || 1),
-                height: defaultHeight * (data.span?.col || 1),
-                gridRowEnd: `span ${data.span?.col || 1}`,
-                gridColumnEnd: `span ${data.span?.row || 1}`,
-              }}
               key={`${i}-${j}`}
+              row={data.span?.row || 1}
+              col={data.span?.col || 1}
             />
           )),
         )}
