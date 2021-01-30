@@ -4,10 +4,7 @@ import styled, { css } from 'styles/styled-components';
 import { TestContent } from 'models';
 import TextContent from 'components/TextContent';
 import ImageContent from 'components/ImageContent';
-
-const defaultWidth = 160;
-const defaultHeight = 66;
-
+import { CELL_HEIGHT, CELL_WIDTH, CONTENT_TYPES } from 'utils/contants';
 interface WrapperProps {
   row: number;
   col: number;
@@ -19,17 +16,10 @@ const Wrapper = styled.div<WrapperProps>`
   border-right: solid 1px #6d6d6d;
   ${(props) =>
     css`
-      width: ${defaultWidth * props.row}px;
-      height: ${defaultHeight * props.col}px;
-      grid-row-end: span ${props.col};
-      grid-column-end: span ${props.row};
+      width: ${CELL_WIDTH * props.row}px;
+      height: ${CELL_HEIGHT * props.col}px;
     `}
 `;
-
-const contentTypes = {
-  image: 'image',
-  text: 'text',
-};
 
 interface Props {
   content: TestContent;
@@ -44,7 +34,7 @@ function Content(props: Props) {
 
   return (
     <Wrapper row={row} col={col}>
-      {contentType === contentTypes.image ? (
+      {contentType === CONTENT_TYPES.IMAGE ? (
         <ImageContent content={content} />
       ) : (
         <TextContent content={content} />

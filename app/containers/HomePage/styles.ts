@@ -27,13 +27,19 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: 'center',
   },
   table: {
-    display: 'grid',
-    gridAutoFlow: 'column',
+    display: 'flex',
     borderTop: 'solid 1px #6d6d6d',
     borderLeft: 'solid 1px #6d6d6d',
     margin: 10,
     width: 'min-content',
     height: 'min-content',
+  },
+  tableColumn: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  tableRow: {
+    display: 'flex',
   },
   tableWrapper: {
     overflow: 'auto',
